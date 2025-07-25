@@ -2,7 +2,7 @@ os: linux
 dist: focal
 vm:
   create:
-    name: custom_h1_example
+    name: custom_h1234_example
 before_install:
   - sudo apt-get -y install libxml2-dev
 addons:
