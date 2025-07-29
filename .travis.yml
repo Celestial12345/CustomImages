@@ -1,13 +1,12 @@
-os: windows
+os: linux
+dist: focal
 vm:
   create:
-    name: custom_windows_image_example
-
+    name: alter_a_b_c_d_e_r-e-e-t--DF__sd
 before_install:
-  - choco install git -y
-  - choco install curl -y
-
+  - sudo apt-get -y install libxml2-dev
+addons:
+  apt:
+    update: true
 script:
-  - echo "Creating custom Windows VM image"
-  - git --version
-  - curl --version
+  - echo "OK8"
