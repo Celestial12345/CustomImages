@@ -1,12 +1,13 @@
-os: linux
-dist: focal
+os: osx
+osx_image: xcode15.2  # Choose appropriate Xcode version
 vm:
   create:
-    name: Vira_l_h1234_example_
+    name: custom_macos_image_example
+
 before_install:
-  - sudo apt-get -y install libxml2-dev
-addons:
-  apt:
-    update: true
+  - brew update
+  - brew install libxml2
+
 script:
-  - echo "OK8"
+  - echo "Creating custom macOS (iOS) VM image"
+  - xcodebuild -version
