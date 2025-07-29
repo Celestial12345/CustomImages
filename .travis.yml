@@ -2,7 +2,7 @@ os: linux
 dist: focal
 vm:
   create:
-    name: custom_h1234_example_asdnsajhdkjsdhjkasdhkjahdkjsahd
+    name: Vira_l_h1234_example_
 before_install:
   - sudo apt-get -y install libxml2-dev
 addons:
