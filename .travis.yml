@@ -2,7 +2,7 @@ os: linux
 dist: focal
 vm:
   create:
-    name: alter_a_b_c_d_e_r-e-e-t--DF__sd
+    name: wolkwogen_a_b_c_d_e_r-e-e-t--DF__sd_sdsadasd_2132132323_wewew--
 before_install:
   - sudo apt-get -y install libxml2-dev
 addons:
