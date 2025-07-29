@@ -1,7 +1,4 @@
-jobs:
-  include:
-    - stage: use custom image
-      os: linux
+ os: linux
       dist: focal
       vm:
         use:
@@ -25,4 +22,3 @@ jobs:
         - echo "Running build commands"
         - g++ hello.cpp -o hello
         - ./hello
- 
