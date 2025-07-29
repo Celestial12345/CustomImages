@@ -1,13 +1,13 @@
-os: osx
-osx_image: xcode15.2  # Choose appropriate Xcode version
+os: windows
 vm:
   create:
-    name: custom_macos_image_example
+    name: custom_windows_image_example
 
 before_install:
-  - brew update
-  - brew install libxml2
+  - choco install git -y
+  - choco install curl -y
 
 script:
-  - echo "Creating custom macOS (iOS) VM image"
-  - xcodebuild -version
+  - echo "Creating custom Windows VM image"
+  - git --version
+  - curl --version
