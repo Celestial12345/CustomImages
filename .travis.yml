@@ -1,12 +1,28 @@
-os: linux
-dist: focal
-vm:
-  create:
-    name: wolkwogen_a_b_c_d_e_r-e-e-t--DF__sd_sdsadasd_2132132323_wewew--
-before_install:
-  - sudo apt-get -y install libxml2-dev
-addons:
-  apt:
-    update: true
-script:
-  - echo "OK8"
+jobs:
+  include:
+    - stage: use custom image
+      os: linux
+      dist: focal
+      vm:
+        use:
+          name: my_testuser1_name
+      before_install:
+        - sudo apt-get -y install libxml2-dev
+      addons:
+        apt:
+          update: true
+
+    - stage: use custom image
+      vm:
+        use:
+          name: my_testuser1_name
+
+    - stage: use custom image
+      vm:
+        use:
+          name: my_testuser1_name
+      script:
+        - echo "Running build commands"
+        - g++ hello.cpp -o hello
+        - ./hello
+ 
