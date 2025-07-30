@@ -1,28 +1,14 @@
-jobs:
-  include:
-    - stage: use custom image
-      os: linux
-      dist: focal
-      vm:
-        use:
-          name: tttttt66666
-      before_install:
-        - sudo apt-get -y install libxml2-dev
-      addons:
-        apt:
-          update: true
+os: linux
+dist: focal
+vm:
+  create:
+    name: Greatest_decision
+before_install:
+  - sudo apt-get -y install libxml2-dev
+addons:
+  apt:
+    update: true
+script:
+  - echo "OK8"
 
-    - stage: use custom image
-      vm:
-        use:
-          name: tttttt66666
 
-    - stage: use custom image
-      vm:
-        use:
-          name: tttttt66666
-      script:
-        - echo "Running build commands"
-        - g++ hello.cpp -o hello
-        - ./hello
- 
