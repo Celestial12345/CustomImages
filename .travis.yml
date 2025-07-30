@@ -1,134 +1,28 @@
-os: linux
-dist: focal
-
 jobs:
   include:
-    - name: Image 1
-      env: IMAGE_NAME=image_01
+    - stage: use custom image
+      os: linux
+      dist: focal
       vm:
-        create:
-          name: image_01
-      script:
-        - echo "Create image_01"
+        use:
+          name: image_10
+      before_install:
+        - sudo apt-get -y install libxml2-dev
+      addons:
+        apt:
+          update: true
 
-    - name: Image 2
-      env: IMAGE_NAME=image_02
+    - stage: use custom image
       vm:
-        create:
-          name: image_02
-      script:
-        - echo "Create image_02"
+        use:
+          name: image_10
 
-    - name: Image 3
-      env: IMAGE_NAME=image_03
+    - stage: use custom image
       vm:
-        create:
-          name: image_03
-      script:
-        - echo "Create image_03"
-
-    - name: Image 4
-      env: IMAGE_NAME=image_04
-      vm:
-        create:
-          name: image_04
-      script:
-        - echo "Create image_04"
-
-    - name: Image 5
-      env: IMAGE_NAME=image_05
-      vm:
-        create:
-          name: image_05
-      script:
-        - echo "Create image_05"
-
-    - name: Image 6
-      env: IMAGE_NAME=image_06
-      vm:
-        create:
-          name: image_06
-      script:
-        - echo "Create image_06"
-
-    - name: Image 7
-      env: IMAGE_NAME=image_07
-      vm:
-        create:
-          name: image_07
-      script:
-        - echo "Create image_07"
-
-    - name: Image 8
-      env: IMAGE_NAME=image_08
-      vm:
-        create:
-          name: image_08
-      script:
-        - echo "Create image_08"
-
-    - name: Image 9
-      env: IMAGE_NAME=image_09
-      vm:
-        create:
-          name: image_09
-      script:
-        - echo "Create image_09"
-
-    - name: Image 10
-      env: IMAGE_NAME=image_10
-      vm:
-        create:
+        use:
           name: image_10
       script:
-        - echo "Create image_10"
-
-    - name: Image 11
-      env: IMAGE_NAME=image_11
-      vm:
-        create:
-          name: image_11
-      script:
-        - echo "Create image_11"
-
-    - name: Image 12
-      env: IMAGE_NAME=image_12
-      vm:
-        create:
-          name: image_12
-      script:
-        - echo "Create image_12"
-
-    - name: Image 13
-      env: IMAGE_NAME=image_13
-      vm:
-        create:
-          name: image_13
-      script:
-        - echo "Create image_13"
-
-    - name: Image 14
-      env: IMAGE_NAME=image_14
-      vm:
-        create:
-          name: image_14
-      script:
-        - echo "Create image_14"
-
-    - name: Image 15
-      env: IMAGE_NAME=image_15
-      vm:
-        create:
-          name: image_15
-      script:
-        - echo "Create image_15"
-
-    - name: Image 16
-      env: IMAGE_NAME=image_16
-      vm:
-        create:
-          name: image_16
-      script:
-        - echo "Create image_16"
-
-    - name: Image
+        - echo "Running build commands"
+        - g++ hello.cpp -o hello
+        - ./hello
+ 
