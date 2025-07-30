@@ -1,14 +1,22 @@
 os: linux
 dist: focal
-vm:
-  create:
-    name: sdfsdfsdf
+
+env:
+  matrix:
+    - IMAGE_NAME=custom_image_one
+    - IMAGE_NAME=Test_image_two
+
 before_install:
-  - sudo apt-get -y install libxml2-dev
+  - sudo apt-get update -y
+  - sudo apt-get install -y libxml2-dev
+
 addons:
   apt:
     update: true
+
+vm:
+  create:
+    name: "${IMAGE_NAME}"
+
 script:
-  - echo "OK8"
-
-
+  - echo "Creating custom image: ${IMAGE_NAME}"
