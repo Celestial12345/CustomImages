@@ -2,7 +2,7 @@ os: linux
 dist: focal
 vm:
   create:
-    name: bbbbbbbbbbbbbbbbbbbbbbbbbbb
+    name: sdfsdfsdf
 before_install:
   - sudo apt-get -y install libxml2-dev
 addons:
