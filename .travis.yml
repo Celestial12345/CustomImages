@@ -1,22 +1,45 @@
 os: linux
+
 dist: focal
 
-env:
-  matrix:
-    - IMAGE_NAME=custom_image_one
-    - IMAGE_NAME=Test_image_two
+vm:  # Existing key
+
+  create:
+
+    name: my_rtest_name3  # Custom identifier string, human-readable
 
 before_install:
-  - sudo apt-get update -y
-  - sudo apt-get install -y libxml2-dev
+
+  - sudo apt-get -y install libxml2-dev
 
 addons:
+
   apt:
+
     update: true
 
-vm:
+script:
+
+  - echo "TEST"
+ 
+vm:  # Existing key
+
   create:
-    name: "${IMAGE_NAME}"
+
+    name: erererererer
+
+before_install:
+
+  - sudo apt-get -y install libxml2-dev
+
+addons:
+
+  apt:
+
+    update: true
 
 script:
-  - echo "Creating custom image: ${IMAGE_NAME}"
+
+  - echo "TEST"
+
+ 
