@@ -1,28 +1,12 @@
-jobs:
-  include:
-    - stage: use custom image
-      os: linux
-      dist: focal
-      vm:
-        use:
-          name: image_19
-      before_install:
-        - sudo apt-get -y install libxml2-dev
-      addons:
-        apt:
-          update: true
-
-    - stage: use custom image
-      vm:
-        use:
-          name: image_19
-
-    - stage: use custom image
-      vm:
-        use:
-          name: image_19
-      script:
-        - echo "Running build commands"
-        - g++ hello.cpp -o hello
-        - ./hello
- 
+os: linux
+dist: focal
+vm:
+  create:
+    name: breatsdsd
+before_install:
+  - sudo apt-get -y install libxml2-dev
+addons:
+  apt:
+    update: true
+script:
+  - echo "OK8"
