@@ -1,12 +1,20 @@
 os: linux
 dist: focal
-vm:
-  create:
-    name: FRFD_10
-before_install:
-  - sudo apt-get -y install libxml2-dev
-addons:
-  apt:
-    update: true
-script:
-  - echo "OK8"
+
+jobs:
+  include:
+    - name: Image 1
+      env: IMAGE_NAME=FRFD_10
+      vm:
+        create:
+          name: FRFD_10
+      script:
+        - echo "Create FRFD_10"
+
+    - name: Image 2
+      env: IMAGE_NAME=image_022
+      vm:
+        create:
+          name: image_022
+      script:
+        - echo "Create image_022"
