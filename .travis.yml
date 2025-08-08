@@ -1,94 +1,12 @@
 os: linux
 dist: focal
-
-jobs:
-  include:
-    - name: Image-namaste
-      env: IMAGE_NAME=Image-namaste
-      vm:
-        create:
-          name: Image-namaste
-      script:
-        - echo "Create Image-namaste"
-
-    - name: Image-namaste1
-      env: IMAGE_NAME=Image-namaste1
-      vm:
-        create:
-          name: Image-namaste1
-      script:
-        - echo "Create Image-namaste1"
-
-    - name: Image-namaste2
-      env: IMAGE_NAME=Image-namaste2
-      vm:
-        create:
-          name: Image-namaste2
-      script:
-        - echo "Create Image-namaste2"
-
-    - name: Image-namaste3
-      env: IMAGE_NAME=Image-namaste3
-      vm:
-        create:
-          name: Image-namaste3
-      script:
-        - echo "Create Image-namaste3"
-
-    - name: Image-namaste4
-      env: IMAGE_NAME=Image-namaste4
-      vm:
-        create:
-          name: Image-namaste4
-      script:
-        - echo "Create Image-namaste4"
-
-    - name: winner
-      env: IMAGE_NAME=winner
-      vm:
-        create:
-          name: winner
-      script:
-        - echo "Create winner"
-
-    - name: catermelon
-      env: IMAGE_NAME=catermelon
-      vm:
-        create:
-          name: catermelon
-      script:
-        - echo "Create catermelon"
-
-    - name: 12345
-      env: IMAGE_NAME=12345
-      vm:
-        create:
-          name: 12345
-      script:
-        - echo "Create 12345"
-
-    - name: him
-      env: IMAGE_NAME=him
-      vm:
-        create:
-          name: him
-      script:
-        - echo "Create him"
-
-    - name: gogia
-      env: IMAGE_NAME=gogia
-      vm:
-        create:
-          name: gogia
-      script:
-        - echo "Create gogia"
-
-    - name: rocking
-      env: IMAGE_NAME=rocking
-      vm:
-        create:
-          name: rocking
-      script:
-        - echo "Create rocking"
-
-    - name: Image
+vm:
+  create:
+    name: CIL21
+before_install:
+  - sudo apt-get -y install libxml2-dev
+addons:
+  apt:
+    update: true
+script:
+  - echo "OK8"
